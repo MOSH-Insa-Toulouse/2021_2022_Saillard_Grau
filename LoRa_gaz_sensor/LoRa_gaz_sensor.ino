@@ -19,6 +19,8 @@ const char *appSKey = "91F6AB105BF31EB6F5185BA4A740E997";
 
 SoftwareSerial loraSerial(TX, RX);
 
+
+//test
 float gas_value_float;
 uint16_t gas_value;
 
