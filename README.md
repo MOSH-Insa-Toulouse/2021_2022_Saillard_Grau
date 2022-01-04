@@ -33,7 +33,7 @@ The datasheet was built there : >AIME [datasheet]
 The goal of this part was to simulate our sensor and its associated electronic diagram thanks to LTSpice. In order to obtain the cutoff frequencies of the different steps and observe the noise attenuations at 50kHz and at the Nyquist frequency.
 
 ### Electronic Diagram
-![image](https://github.com/MOSH-Insa-Toulouse/2021_2022_Saillard_Grau/Images/Electronic_Diagram.png
+![image](https://github.com/MOSH-Insa-Toulouse/2021_2022_Saillard_Grau/Images/)Electronic_Diagram.png
 
 ### Filter characteristics
 
@@ -47,16 +47,16 @@ The goal of this part was to simulate our sensor and its associated electronic d
 - [x] Routing
 
 ### Schematic
-![image](https://github.com/MOSH-Insa-Toulouse/2021_2022_Saillard_Grau/Images/schematic.png
+![image](https://github.com/MOSH-Insa-Toulouse/2021_2022_Saillard_Grau/Images/schematic.png)
 
 ### Placement and Routing
-![image](https://github.com/MOSH-Insa-Toulouse/2021_2022_Saillard_Grau/Images/placement.png
-![image](https://github.com/MOSH-Insa-Toulouse/2021_2022_Saillard_Grau/Images/TopLayer.png
-![image](https://github.com/MOSH-Insa-Toulouse/2021_2022_Saillard_Grau/Images/BottomLayer.png
+![image](https://github.com/MOSH-Insa-Toulouse/2021_2022_Saillard_Grau/Images/placement.png)
+![image](https://github.com/MOSH-Insa-Toulouse/2021_2022_Saillard_Grau/Images/TopLayer.png)
+![image](https://github.com/MOSH-Insa-Toulouse/2021_2022_Saillard_Grau/Images/BottomLayer.png)
 
 ### 3D View
-![image](https://github.com/MOSH-Insa-Toulouse/2021_2022_Saillard_Grau/Images/TopView.png
-![image](https://github.com/MOSH-Insa-Toulouse/2021_2022_Saillard_Grau/Images/BottomView.png
+![image](https://github.com/MOSH-Insa-Toulouse/2021_2022_Saillard_Grau/Images/TopView.png)
+![image](https://github.com/MOSH-Insa-Toulouse/2021_2022_Saillard_Grau/Images/BottomView.png)
 
 ## Contribution
 
