@@ -4,7 +4,7 @@
 ##SUMMARY
 * 1 [Project description](#description)
 * 2 [Gas sensor based on nanoparticles](#paragraph2)
-* 3 [PCB Elaboration + Analog circuit](#paragraph3)
+* 3 [Analog circuit + PCB Elaboration](#paragraph3)
 * 4 [Microcontroler and Open Source Hardware](#paragraph4)
 
 -------
@@ -58,6 +58,11 @@ The goal of this part was to simulate our sensor and its associated electronic d
 ### 3D View
 ![image](Images/TopView.png)
 ![image](Images/BottomView.png)
+
+## 4 - Microcontroler and Open Source Hardware
+This part was focused on exploiting the data from the gas sensor. The idea was to interconnect several technologies; recover the data from the sensor using an arduino, process this data with the Arduino software, send it over the LoRa network and retrieve it on The Things Network.
+
+You'll find all the related files under >LoRa_gaz_sensor>LoRa_gaz_sensor.ino
 
 ## Contribution
 
