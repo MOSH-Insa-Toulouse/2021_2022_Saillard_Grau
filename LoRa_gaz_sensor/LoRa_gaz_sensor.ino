@@ -11,12 +11,14 @@ const char *appSKey = "91F6AB105BF31EB6F5185BA4A740E997";
 
 #define debugSerial Serial
 
-#define TX 10
-#define RX 11
-#define RST 12
-#define PWM 9
+#define TX 10             // serial port Tx emulation for RN2483 module
+#define RX 11             // serial port Rx emulation for RN2483 module
+#define RST 12            // serial port Reset emulation for RN2483 module
+
+#define Sensor_choice 9   // manual choise of gas sensor plug
 
 #define gas_PIN A0
+#define temperature_PIN A1
 
 SoftwareSerial loraSerial(TX, RX);
 
@@ -39,9 +41,9 @@ void setup() {
 
 
   pinMode(gas_PIN, INPUT);
+  pinMode(temperature_PIN, INPUT);
   pinMode(2, INPUT_PULLUP);
   digitalWrite(2, LOW);
-  analogWrite(PWM,10);
   
   gas_value_float=0;
   gas_value=0;  
@@ -50,7 +52,7 @@ void setup() {
   Serial.begin(9600);
   //loraSerial.begin(9600);
   Serial.println("Start");
-  pinMode(RST, OUTPUT);
+  pinMode(RST, OUTPUT);         // RN2483 initialization
   
   digitalWrite(RST, HIGH);
   digitalWrite(RST, LOW);
@@ -59,7 +61,7 @@ void setup() {
 
   //myLora.autobaud();
 
-  Serial.println("RN483 version number: ");
+  Serial.println("RN2483 version number: ");
   //Serial.println(myLora.sysver());
   
   //myLora.initABP(devAddr, appSKey, nwkSKey);
@@ -67,10 +69,6 @@ void setup() {
 
   
   delay(2000);
-
-  
-
-
 }
 
 void loop() {
@@ -97,5 +95,4 @@ void loop() {
 
   //myLora.txBytes(payload, sizeof(payload));
   
-
 }
