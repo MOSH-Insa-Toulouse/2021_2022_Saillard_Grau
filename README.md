@@ -1,5 +1,5 @@
 #2021_2022_Saillard_Grau
-# Gas sensor connected Project 
+#Gas sensor connected Project 
 
 ##SUMMARY
 * 1 [Project description](#description)
@@ -14,7 +14,7 @@ This projet is realised in the UF "SmartDevice" of the MSIoT master.
 The aim is to design and build a smart device based on the combination of a gas sensor and an electronic card to communicate data over a low speed network.
 This project addresses many concepts: the physics of nanoparticle sensors, the writing of a datasheet, analog electronics, Arduino Uno, the production of a PCB, the design of a test bench and communication via wireless network.
 
-*Deliverables* : 
+*Deliverables* :
 
 1. Gas sensor Datasheet : Composed of a description, specifications, specifics characteristics (electrical, thermal), package dimensions and typical applications
 2.Analog circuit + PCB Elaboration : The board accepts two gas sensors inputs with a transimpedence conditionner. It can be plug on an Arduino Uno Board below and a LoRa module board can be plug on the top.
@@ -48,8 +48,6 @@ The  Analog to Digital Converter of the microcontrolerhas a sample frequency of 
 ### Filters characteristics
 ![image](Images/Condtionner_Filters_Characteristics.png)
 
-
-
 ### Electronic Diagram
 ![image](Images/Electronic_Diagram.png)
 
@@ -76,12 +74,10 @@ The LoRa RNB2483/2993 module given by INSA and sell by Drazzy.com will be plug o
 
 ![image](Images/BottomLayer.png)
 
-
 ### 3D View
 ![image](Images/TopView.png)
 
 ![image](Images/BottomView.png)
-
 
 ## 4 - Microcontroler and Open Source Hardware
 This part was focused on exploiting the data from the gas sensor. The idea is to recover the data from the sensor using an arduino, process this data with the Arduino software, send it over the LoRa network and retrieve it on The Things Network.
@@ -90,7 +86,7 @@ You'll find the related files under >LoRa_gaz_sensor>LoRa_gaz_sensor.ino
 
 ## Contribution
 
-### Students 
+### Students
 
 * Victor GRAU
 * François SAILLARD
@@ -98,5 +94,5 @@ You'll find the related files under >LoRa_gaz_sensor>LoRa_gaz_sensor.ino
 ### Tutors
 
 * Jérémie GRISOLIA
-* Arnauld BIGANZOLI 
+* Arnauld BIGANZOLI
 * Benjamin MESTREAIME
