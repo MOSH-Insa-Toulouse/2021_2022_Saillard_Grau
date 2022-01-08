@@ -36,6 +36,9 @@ The goal of this part was to simulate our sensor and its associated electronic d
 ### Electronic Diagram
 ![image](Images/Electronic_Diagram.png)
 
+### Conditioner Diagram
+![image](Images/Conditioner_Diagram.png)
+
 ### Filter characteristics
 
 ### TODO Kicad
@@ -51,13 +54,16 @@ The goal of this part was to simulate our sensor and its associated electronic d
 ![image](Images/schematic.png)
 
 ### Placement and Routing
-![image](Images/placement.png)
 ![image](Images/TopLayer.png)
+<img src="Images/TopLayer.png" width="300">
 ![image](Images/BottomLayer.png)
+<img src="Images/BottomLayer.png" width="300">
 
 ### 3D View
 ![image](Images/TopView.png)
+<img src="Images/TopView.png" width="300">
 ![image](Images/BottomView.png)
+<img src="Images/BottomView.png" width="300">
 
 ## 4 - Microcontroler and Open Source Hardware
 This part was focused on exploiting the data from the gas sensor. The idea was to interconnect several technologies; recover the data from the sensor using an arduino, process this data with the Arduino software, send it over the LoRa network and retrieve it on The Things Network.
