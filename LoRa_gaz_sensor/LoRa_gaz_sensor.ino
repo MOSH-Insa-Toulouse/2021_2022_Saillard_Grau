@@ -1,3 +1,4 @@
+
 #include <Arduino.h>
 #include <TheThingsNetwork.h>
 #include <SoftwareSerial.h>
@@ -15,30 +16,30 @@ const char *appSKey = "91F6AB105BF31EB6F5185BA4A740E997";
 #define RX 11             // serial port Rx emulation for RN2483 module
 #define RST 12            // serial port Reset emulation for RN2483 module
 
-#define Sensor_choice 9   // manual choise of gas sensor plug
+#define Sensor_choice 9   // manual choice of gas sensor plug , will be implemented in next development
 
 #define gas_PIN A0
-#define temperature_PIN A1
+#define temperature_PIN A1  //  will be implemented in next development
 
 SoftwareSerial loraSerial(TX, RX);
 
-
-//test
 float gas_value_float;
 uint16_t gas_value;
 
 int lora = 0;
 
-//rn2xx3 myLora(loraSerial);
+//create an instance of the rn2xx3 library,
+//giving the software UART as stream to use,
+//and using LoRa WAN
+
+rn2xx3 myLora(loraSerial);
 
 void maRoutine() {
   Serial.println("ok");
   lora = 1;
-  
  }
 
 void setup() {
-
 
   pinMode(gas_PIN, INPUT);
   pinMode(temperature_PIN, INPUT);
@@ -48,35 +49,35 @@ void setup() {
   gas_value_float=0;
   gas_value=0;  
 
-
+ // Open serial communications and wait for port to open:
   Serial.begin(9600);
-  //loraSerial.begin(9600);
+  loraSerial.begin(9600);
   Serial.println("Start");
-  pinMode(RST, OUTPUT);         // RN2483 initialization
-  
+
+ // RN2483 reset
+  pinMode(RST, OUTPUT);         
   digitalWrite(RST, HIGH);
   digitalWrite(RST, LOW);
   delay(500);
   digitalWrite(RST, HIGH);
 
-  //myLora.autobaud();
+// Initialize the RN2483 module
+  myLora.autobaud();
 
   Serial.println("RN2483 version number: ");
-  //Serial.println(myLora.sysver());
+  Serial.println(myLora.sysver());
   
-  //myLora.initABP(devAddr, appSKey, nwkSKey);
+  myLora.initABP(devAddr, appSKey, nwkSKey);
   attachInterrupt(digitalPinToInterrupt(2), maRoutine, HIGH);
 
-  
   delay(2000);
 }
 
 void loop() {
 
-  //gas_value_float=analogRead(gas_PIN);
-  //Serial.println(gas_value_float);
+  gas_value_float=analogRead(gas_PIN);
+  Serial.println(gas_value_float);
 
- 
   if(lora==1){
     gas_value_float=analogRead(gas_PIN);
     Serial.println(gas_value_float);
@@ -84,8 +85,8 @@ void loop() {
     byte tab_alert[2];
     tab_alert[0]=highByte(alert);
     tab_alert[1]=lowByte(alert);
-   // myLora.txBytes(tab_alert, sizeof(tab_alert));
-   delay(5000);
+    myLora.txBytes(tab_alert, sizeof(tab_alert));
+    delay(5000);
     lora=0;
   }
   gas_value=gas_value_float*100;
@@ -93,6 +94,7 @@ void loop() {
   payload[0]=highByte(gas_value);
   payload[1]=lowByte(gas_value);
 
-  //myLora.txBytes(payload, sizeof(payload));
+//myLora.tx(payload);
+  myLora.txBytes(payload, sizeof(payload));
   
 }
