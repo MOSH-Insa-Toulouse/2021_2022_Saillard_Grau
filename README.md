@@ -122,6 +122,12 @@ The LoRa RNB2483/2993 module given by INSA and sell at Drazzy.com will be plug o
 
 ### 3D View
 
+You can see:
+* S1 location where the nano sensor could be solder or put on a specific TO5 socket
+* J1 for the external heater power supply
+* J2 for a Industrial SEED Grove sensor
+* J4 and J5 for the sensor choice
+
 ![image](Images/TopView.png)
 
 ![image](Images/BottomView.png)
@@ -144,3 +150,4 @@ You'll find the related files under >LoRa_gaz_sensor>LoRa_gaz_sensor.ino
 * Jérémie GRISOLIA
 * Arnauld BIGANZOLI
 * Benjamin MESTREAIME
+
